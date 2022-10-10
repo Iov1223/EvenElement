@@ -67,10 +67,17 @@ namespace EvenElement
     {
         static void Main(string[] args)
         {
-            Array myArr = new Array(args);
-            myArr.ShowArr();
-            myArr.CheckEvenElements();
-            myArr.Summ();
+            if (args.Length > 0)
+            {
+                Array myArr = new Array(args);
+                myArr.ShowArr();
+                myArr.CheckEvenElements();
+                myArr.Summ();
+            }
+            else
+            {
+                Console.WriteLine("Программа требует ввода аргументов командной строки.");
+            }
         }
     }
 }
