@@ -7,11 +7,12 @@ using System.IO;
 
 namespace EvenElement
 {
+    
     class Array
     {
         private int[] _arr;
         private List<int> _evenArr;
-        StreamWriter _writer;
+        private StreamWriter _writer;
 
         public Array(string[] arr)
         {
@@ -37,7 +38,7 @@ namespace EvenElement
             _writer = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\numbers.txt", true);
             for (int i = 0; i < _arr.Length; i++)
             {
-                if (i % 2 != 0 && _arr[i] > 10)
+                if (i % 2 != 0 &&  _arr[i] < -10 | _arr[i] > 10 )
                 {
                     _evenArr.Add(_arr[i]);
                 }
@@ -47,7 +48,7 @@ namespace EvenElement
             {
                 _writer.Write($"{_evenArr[i]}, ");
             }
-            _writer.WriteLine("\b\b]");
+            _writer.WriteLine("]");
             _writer.Close();
         }
         public void Summ()
